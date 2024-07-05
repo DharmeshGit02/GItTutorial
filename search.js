@@ -1,6 +1,11 @@
 function ls(x, arr) {
-	for(let i = 0; i < arr.length; i++) {
-		if( arr[i] == x) return i;
+	arr.sort()
+	let left = 0, right = arr.length -1 ;
+	while(left <= right) {
+		let mid = left + (right - left) / 2;
+ 		if(x == arr[mid])return mid;
+		else if(x < arr[mid]) left = mid + 1
+		else right = mid - 1;
 	}
 	return -1;
 }
